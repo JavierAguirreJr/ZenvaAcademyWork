@@ -23,6 +23,21 @@ ul{
   list-style: none;
 }
 
+h3.title{
+    color: #131633;
+    text-transform: capitalize;
+    font-size: 32px;
+    margin-bottom: 35px;
+    text-align: center;
+}
+
+hr{
+    width: 150px;
+    height: 2px;
+    background-color: #2196f3;
+    border: 0;
+    margin: 40px auto;
+}
 
 /* ------------------
 HERO
@@ -89,6 +104,94 @@ HERO
     #hero a.btn{
       padding: 15px 40px;
     }
+}
+
+/* ------------------
+ABOUT
+--------------------*/
+
+#about{
+  padding: 10px;
+  background-color: #f7f7f7;
+  margin-bottom: 20px;
+}
+
+#twocols{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-img{
+  border: 4px solid #2196f3;
+  background-color: #2196f3;
+}
+
+.about-bio{
+  width: 65%;
+  max-width: 800px;
+  line-height: 2;
+  margin-left: 20px;
+}
+
+@media(max-width:600px){
+  #about, #twocols {
+    flex-direction: column;
+  }
+    .about-bio{
+      margin-top: 20px;
+      line-height: 1.5;
+      text-align: left;
+    }
+}
+
+/* ------------------
+GALLERY
+--------------------*/
+#gallery{
+  background-color: #fff;
+
+}
+
+#gallery .grid li{
+  padding: 20px;
+  height: 300px;
+  border-radius: 3px;
+  background-clip: content-box;
+  background-size: cover;
+  background-position: center;
+  background-color: #333;
+}
+
+#gallery ul.grid{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#gallery .grid li.small{
+  flex-basis: 40%;
+}
+
+#gallery .grid li.large{
+  flex-basis: 60%;
+}
+
+#gallery p{
+  max-width: 800px;
+  text-align: center;
+  margin: 0 auto 35px;
+  padding: 0 20px;
+  line-height: 2;
+}
+
+@media(max-width: 1000px){
+  #gallery .grid li.small,
+  #gallery .grid li.large{
+    flex-basis: 100%;
+  }
 }
 
 /* ------------------
