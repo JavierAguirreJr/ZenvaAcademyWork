@@ -14,7 +14,7 @@
   <canvas id="mycanvas" width="640" height="360" ></canvas>
   <script>
     window.addEventListener("load",function() {
-      
+
       //constants
       var GAME_WIDTH = 640;
       var GAME_HEIGHT = 360;
@@ -37,6 +37,20 @@
 
       //enemies
       var enemies = [
+        {
+          x: 300,
+          y: 100,
+          speedY: 1,
+          w: 40,
+          h:40
+        },
+        {
+          x: 140,
+          y: 300,
+          speedY: 1,
+          w: 40,
+          h: 40
+        },
         {
           x: 100, //x coordinate
           y: 100, //y coordinate
@@ -94,16 +108,16 @@
       var stopPlayer = function() {
         player.isMoving = false;
       }
-      
+
       //grab the canvas and context
       var canvas = document.getElementById("mycanvas");
       var ctx = canvas.getContext("2d");
 
       //event listeners to move player
       canvas.addEventListener('mousedown', movePlayer);
-      canvas.addEventListener('mouseup', stopPlayer);   
+      canvas.addEventListener('mouseup', stopPlayer);
       canvas.addEventListener('touchstart', movePlayer);
-      canvas.addEventListener('touchend', stopPlayer);   
+      canvas.addEventListener('touchend', stopPlayer);
 
       var load = function() {
         sprites.player = new Image();
@@ -141,7 +155,7 @@
         //update enemies
         var i = 0;
         var n = enemies.length;
-        
+
         enemies.forEach(function(element, index){
 
           //check for collision with player
@@ -157,7 +171,7 @@
 
           //move enemy
           element.y += element.speedY;
-          
+
           //check borders
           if(element.y <= 10) {
             element.y = 10;
@@ -174,7 +188,7 @@
       //show the game on the screen
       var draw = function() {
         //clear the canvas
-        ctx.clearRect(0,0,GAME_WIDTH,GAME_HEIGHT);        
+        ctx.clearRect(0,0,GAME_WIDTH,GAME_HEIGHT);
 
         //draw background
         ctx.drawImage(sprites.background, 0, 0);
@@ -198,8 +212,8 @@
         draw();
 
         if(gameLive) {
-          window.requestAnimationFrame(step); 
-        }     
+          window.requestAnimationFrame(step);
+        }
       };
 
       //check the collision between two rectangles
